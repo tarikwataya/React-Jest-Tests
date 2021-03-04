@@ -1,27 +1,17 @@
 import React, { useRef, useCallback } from 'react';
 import { FiMail, FiLock } from 'react-icons/fi';
-import { FcGoogle } from 'react-icons/fc';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 
-import Carousel from 'react-bootstrap/Carousel';
 import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import ButtonIcon from '../../components/ButtonIcon';
 
-import {
-  OtherLogin,
-  Container,
-  Content,
-  AnimationContainer,
-  Background,
-  FooterPage,
-} from './styles';
+import { Container, AnimationContainer, FooterPage } from './styles';
 
 interface SignInFormData {
   email: string;
@@ -78,62 +68,25 @@ const SignIn: React.FC = () => {
 
   return (
     <Container>
-      <Background>
-        <Carousel nextIcon={false} prevIcon={false}>
-          <Carousel.Item>
-            <img className="d-block w-80" src="Data.png" alt="First slide" />
-            <h3>First Marcenas mattis egestas</h3>
-            <p>
-              Erdum et malesuada fames ac ante ileum primmer in faucibus
-              uspendisse porta.
-            </p>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-80" src="data2.png" alt="First slide" />
-            <h3>Second Marcenas mattis</h3>
-            <p>
-              Erdum et malesuada fames ac ante ileum primmer in faucibus
-              uspendisse porta.
-            </p>
-          </Carousel.Item>
-        </Carousel>
-      </Background>
+      <AnimationContainer>
+        <h1>Tests</h1>
+        <Form ref={formRef} onSubmit={handleSubmit}>
+          <h2>Welcome to Tests</h2>
+          <Input name="email" icon={FiMail} placeholder="Users name or Email" />
+          <Input
+            name="password"
+            icon={FiLock}
+            type="password"
+            placeholder="Password"
+          />
+          <a href="forgot">Forgot password?</a>
+          <Button type="submit">Sign In</Button>
+        </Form>
 
-      <Content>
-        <AnimationContainer>
-          <h1>Invision</h1>
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <h2>Welcome to Invision</h2>
-            <Input
-              name="email"
-              icon={FiMail}
-              placeholder="Users name or Email"
-            />
-            <Input
-              name="password"
-              icon={FiLock}
-              type="password"
-              placeholder="Password"
-            />
-            <a href="forgot">Forgot password?</a>
-            <Button type="submit">Sign In</Button>
-
-            <OtherLogin>
-              <hr />
-              <p>Or</p>
-              <hr />
-            </OtherLogin>
-
-            <ButtonIcon type="submit" icon={FcGoogle}>
-              Sign in with Google
-            </ButtonIcon>
-          </Form>
-
-          <FooterPage>
-            New Invision? <Link to="/signup">Create Account</Link>
-          </FooterPage>
-        </AnimationContainer>
-      </Content>
+        <FooterPage>
+          New? <Link to="/signup">Create Account</Link>
+        </FooterPage>
+      </AnimationContainer>
     </Container>
   );
 };

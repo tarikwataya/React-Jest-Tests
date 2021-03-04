@@ -4,17 +4,8 @@ export const Container = styled.div`
   height: 100vh;
 
   display: flex;
-  align-items: stretch;
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  width: 100%;
-  max-width: 700px;
 `;
 
 const appearFromRight = keyframes`
@@ -29,21 +20,6 @@ const appearFromRight = keyframes`
   }
 `;
 
-export const OtherLogin = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-
-  p {
-    margin: 10px;
-  }
-
-  hr {
-    flex: 1;
-  }
-`;
-
 export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,15 +27,6 @@ export const AnimationContainer = styled.div`
   justify-content: center;
 
   animation: ${appearFromRight} 1s;
-
-  h1 {
-    width: 340px;
-    text-align: right;
-
-    @media (min-width: 700px) {
-      width: 550px;
-    }
-  }
 
   form {
     margin: 20px;
@@ -97,39 +64,6 @@ export const AnimationContainer = styled.div`
     &:hover {
       color: var(--color-primary-dark);
     }
-  }
-`;
-
-export const Background = styled.div`
-  flex: 1;
-  background: var(--color-live) 0% 0% no-repeat padding-box;
-  background-size: contain;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    width: 35rem;
-
-    @media (min-width: 1920px) {
-      width: 55rem;
-    }
-  }
-
-  h3,
-  p {
-    text-align: center;
-    color: var(--color-base);
-  }
-
-  li {
-    margin-bottom: -3rem;
-    background-color: var(--color-base);
-  }
-
-  @media (max-width: 1024px) {
-    display: none;
   }
 `;
 
