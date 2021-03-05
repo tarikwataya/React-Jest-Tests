@@ -20,11 +20,11 @@
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "3.4.1",
     "react-slideshow-image": "^3.4.3",
     "react-spring": "^8.0.27",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.1.0",
+    "styled-components": "^5.2.1",
     "typescript": "~3.7.2",
     "uuidv4": "^6.2.3",
     "yup": "^0.29.3"
@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:coverage": "react-scripts test --coverage --watchAll false",
+    "test:coverage": "react-scripts test --env=jest-environment-jsdom-sixteen --coverage --watchAll false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -74,6 +74,7 @@
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "2.5.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-styled-components": "^7.0.3",
     "prettier": "^2.1.1"
   }
 }

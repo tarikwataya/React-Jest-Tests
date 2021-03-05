@@ -57,14 +57,10 @@ describe('Input component', () => {
     const inputElement = getByPlaceholderText('E-mail');
     const containerElement = getByTestId('input-container');
 
-    fireEvent.change(inputElement, {
-      target: { value: 'tarikwataya@gmail.com' },
-    });
-
     fireEvent.blur(inputElement);
 
     await waitFor(() => {
-      expect(containerElement).toHaveStyle('border-color: #000000;');
+      expect(containerElement).not.toHaveStyle('border-color: #000000;');
     });
   });
 });
