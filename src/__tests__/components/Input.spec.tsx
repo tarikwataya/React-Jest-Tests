@@ -34,18 +34,18 @@ describe('Input component', () => {
     const inputElement = getByPlaceholderText('E-mail');
     const containerElement = getByTestId('input-container');
 
-    fireEvent.blur(inputElement);
-
-    await waitFor(() => {
-      expect(containerElement).not.toHaveStyle('border-color: #000000;');
-      expect(containerElement).not.toHaveStyle('color: #000000;');
-    });
-
     fireEvent.focus(inputElement);
 
     await waitFor(() => {
-      expect(containerElement).not.toHaveStyle('border-color: #000000;');
-      expect(containerElement).not.toHaveStyle('color: #000000;');
+      expect(containerElement).toHaveStyleRule('border-color', 'var(--color-base-dark)');
+      expect(containerElement).toHaveStyleRule('color', 'var(--color-base-dark)');
+    });
+
+    fireEvent.blur(inputElement);
+
+    await waitFor(() => {
+      expect(containerElement).not.toHaveStyleRule('border-color', 'var(--color-base-dark)');
+      expect(containerElement).not.toHaveStyleRule('color', 'var(--color-base-dark)');
     });
   });
 
@@ -57,10 +57,14 @@ describe('Input component', () => {
     const inputElement = getByPlaceholderText('E-mail');
     const containerElement = getByTestId('input-container');
 
+    fireEvent.change(inputElement, {
+      target: { value: 'johndoe@example.com.br' },
+    });
+
     fireEvent.blur(inputElement);
 
     await waitFor(() => {
-      expect(containerElement).not.toHaveStyle('border-color: #000000;');
+      expect(containerElement).toHaveStyleRule('border-color', 'var(--color-base-dark)');
     });
   });
 });
