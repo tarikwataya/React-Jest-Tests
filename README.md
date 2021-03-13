@@ -65,8 +65,7 @@ $ yarn test:coverage
 
 ---
 ### 🎥️ Example
-  <div align="center"  >
-	  ![Capturar](https://user-images.githubusercontent.com/17626241/111014557-f8515900-8382-11eb-91ff-f702f4922a14.PNG)
-  </div>
+  ![Capturar](https://user-images.githubusercontent.com/17626241/111014557-f8515900-8382-11eb-91ff-f702f4922a14.PNG)
+  
 
 ---
